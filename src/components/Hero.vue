@@ -1,0 +1,92 @@
+<template>
+    <div class="hero">
+        <div
+        class="hero__bg-img"
+        :style="{ 'background-image': 'url('+ imageBackground +')' }">
+        </div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12 col-md-3">
+                    <div class="hero__body">
+                        <div class="hero__body--img">
+                            <b-img-lazy
+                            v-bind="mainProps"
+                            :src="image"
+                            fluid alt="Image 1">
+                            </b-img-lazy>
+                        </div>
+                        <b-button>
+                            <b-icon icon="exclamation-circle" variant="light"></b-icon>
+                        </b-button>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="hero__content">
+                        <div class="small-text text-uppercase">ZA11155484</div>
+                        <h1 class="text-uppercase">cooking with the power of sun</h1>
+                        <p>{{ heroContent }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
+<script>
+export default {
+  name: 'Hero',
+  data() {
+    return {
+      mainProps: {
+        center: true,
+        fluidGrow: true,
+        blank: true,
+        class: 'w-100',
+      },
+      imageBackground: 'https://images.pexels.com/photos/21014/pexels-photo.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+      image: 'https://images.pexels.com/photos/3921010/pexels-photo-3921010.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+      heroContent: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+    };
+  },
+};
+</script>
+<style lang="scss" scoped>
+    @import '../styles/main';
+    .hero{
+        position: relative;
+        &__bg-img{
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            min-height: 300px;
+            height: 100%;
+        }
+        &__body{
+            position: relative;
+            text-align: left;
+            @include flexbox();
+            @include align-items(flex-end);
+            &--img{
+                max-width: 250px;
+                margin-right: 20px;
+                img{
+                    border-radius: 12px;
+                }
+            }
+            button{
+                position: relative;
+                border-radius: 50px;
+                min-width: 40px;
+                height: 40px;
+                padding: 0;
+                @include flexbox();
+                @include align-items(center);
+                @include justify-content(center);
+                svg{
+                    width: 24px;
+                    height: 24px;
+                }
+            }
+
+        }
+    }
+</style>
