@@ -49,3 +49,18 @@ export default {
   },
 };
 </script>
+
+<style lang="scss" scoped>
+ .status{
+   position: relative;
+   &:after{
+     content: '';
+     position: absolute;
+    top: 0;
+    left: 70px;
+    height: 100%;
+    border-left: 6px dotted #e9ecef;
+    z-index: -1;
+   }
+ }
+</style>

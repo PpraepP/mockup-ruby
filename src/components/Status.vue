@@ -78,6 +78,7 @@ export default {
         }
         &__main{
             position: relative;
+            margin: 20px 0;
             @include align-items(center);
             &:after{
                 content: '';
