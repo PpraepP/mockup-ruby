@@ -110,10 +110,12 @@ export default {
             &--progress{
                 height: 140px;
                 .radial-progress-inner{
-                    width: 85px;
-                    height: 60px;
+                    background-color: white;
+                    top: 10px;
+                    height: 70px;
                 }
                 .radial-progress-bar{
+                    position: relative;
                     circle{ stroke-width: 6px !important; }
                 }
                 p{
