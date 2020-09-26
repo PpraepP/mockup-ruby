@@ -43,8 +43,8 @@ export default {
         class: 'w-100',
       },
       imageBackground: 'https://images.pexels.com/photos/21014/pexels-photo.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
-      image: 'https://images.pexels.com/photos/3921010/pexels-photo-3921010.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
-      heroContent: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+      image: 'https://images.pexels.com/photos/5202011/pexels-photo-5202011.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+      heroContent: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque lobortis, lectus ac sodales iaculis, nisl erat eleifend leo, pulvinar vehicula eros tortor ac erat. Proin imperdiet magna et convallis dignissim.',
     };
   },
 };
