@@ -2,23 +2,27 @@
     <div class="process">
       <div class="container-fluid">
         <div class="row">
-          <div class="col-6">
+          <div class="col-12 col-md-6">
             <div class="process__performance">
-              <h2 class="text-uppercase">{{ title }}</h2>
-              <div class="small-text text-uppercase">ZA11155484</div>
-              <div v-for="(item, index) in progressBar" :key="index" class="progress-bar__wrapper">
-                <div class="progress-bar__wrapper--header d-flex justify-content-between">
-                  <h5>300,125<span>.00฿</span></h5>
-                  <div class="small-text text-uppercase">1,200,000 ฿</div>
+              <h3 class="text-uppercase">{{ title }}</h3>
+              <div class="small-text text-uppercase">Gross sale / Opra</div>
+              <div class="process__performance--wrapper">
+                <div v-for="(item, index) in progressBar"
+                :key="index"
+                class="process--box">
+                  <div class="header d-flex justify-content-between">
+                    <h5>300,125<span>.00฿</span></h5>
+                    <div class="small-text text-uppercase">1,200,000 ฿</div>
+                  </div>
+                  <b-progress :value="item.value" :max="item.max" class="mb-3"></b-progress>
                 </div>
-                <b-progress :value="item.value" :max="item.max" class="mb-3"></b-progress>
               </div>
             </div>
           </div>
-          <div class="col-6">
+          <div class="col">
             <div class="process__status">
-              <div class="process__status--header d-flex">
-                <h3>Status</h3>
+              <div class="process__status--header d-flex justify-content-between">
+                <h3 class="text-uppercase">Status</h3>
                 <div class="small-text text-uppercase">Contruction</div>
               </div>
               <Status/>
@@ -26,7 +30,6 @@
           </div>
         </div>
       </div>
-
     </div>
 </template>
 
@@ -50,17 +53,49 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
- .status{
-   position: relative;
-   &:after{
-     content: '';
-     position: absolute;
-    top: 0;
-    left: 70px;
-    height: 100%;
-    border-left: 6px dotted #e9ecef;
-    z-index: -1;
-   }
- }
+<style lang="scss">
+@import '../styles/main';
+.process{
+  padding: 27px 0;
+  h3{
+    margin-bottom: 30px;
+    }
+    @include media-breakpoint-down(sm){
+      h3{ font-size: 16px;}
+    }
+  &__performance{
+    .small-text { margin-bottom: 20px;}
+    &--wrapper{
+      .process--box{
+        &:not(:last-child){ margin-bottom: 40px;}
+        &:first-of-type{
+          .progress-bar{ background-color: #51e4c1; }
+        }
+        &:last-of-type{
+          .progress-bar{ background-color: #f5a721; }
+        }
+      }
+      .header{
+        h5{
+          margin-bottom: 18px;
+          span{ font-size: 12px; }
+        }
+      }
+    }
+    @include media-breakpoint-down(sm){
+      padding-right: 30px;
+      padding-bottom: 25px;
+      border-bottom: 1px solid #A3A5A7;
+      .progress{
+        height: 9px;
+      }
+    }
+  }
+  &__status{
+    @include media-breakpoint-down(sm){
+      border-bottom: 1px solid #A3A5A7;
+      padding: 25px 54px 28px 0;
+    }
+  }
+}
 </style>

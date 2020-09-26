@@ -60,9 +60,9 @@ export default {
                 span{
                     display: block;
                     position: absolute;
-                    height: 4px;
+                    height: 1px;
                     width: 100%;
-                    background: #d3531a;
+                    background: #2c3e50;
                     border-radius: 50px;
                     opacity: 1;
                     left: 0;
@@ -70,14 +70,14 @@ export default {
                     transition: .25s ease-in-out;
                     &:nth-child(1){ top: 0px; }
                     &:nth-child(2),
-                    &:nth-child(3){  top: 8px; }
-                    &:nth-child(4){ top: 16px;}
+                    &:nth-child(3){  top: 12px; }
+                    &:nth-child(4){ top: 24px;}
                 }
                 &.active{
                     span{
                         &:nth-child(1),
                         &:nth-child(4){
-                            top: 8px;
+                            top: 12px;
                             width: 0%;
                             left: 50%;
                         }
